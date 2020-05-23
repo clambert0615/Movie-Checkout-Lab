@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "GetReceipt";
+}
+@model List<Movie>
+
+<h1>Receipt</h1>
+
+
+<br>
+<br>
+
+
+@{
+    double price = 0;
+}
+
+<table style="width:100%">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Run Time
+        </th>
+        <th>
+            Cost
+        </th>
+
+    </tr>
+
+
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.MovieTitle</td>
+            <td>@movie.RunTime</td>
+            <td>@movie.Cost </td>
+
+
+        </tr>
+        price += movie.Cost;
+    }
+</table>
+<br>
+<br>
+<br>
+<h4>Total Cost = @price</h4>
+<br>
+<br>
+<h3> Thank you for your rental!</h3>
+

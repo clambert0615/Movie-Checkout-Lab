@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "ListMovies";
+}
+@model List<Movie>
+
+<h1>List of Movies</h1>
+
+<table style="width:100%">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Run Time
+        </th>
+        <th>
+            Add to Cart?
+        </th>
+
+    </tr>
+
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.MovieTitle</td>
+            <td>@movie.RunTime</td>
+            <td>
+                <a href="/Movie/AddToCart?title=@movie.MovieTitle"> Select this movie! </a>
+            </td>
+        </tr>
+    }
+</table>
+

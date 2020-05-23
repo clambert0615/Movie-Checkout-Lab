@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Registration";
+}
+@model Movie
+
+<h1>Please Fill out the form to register a movie</h1>
+
+<form action="/Movie/AddNewMovie" method="post">
+
+    <p>Movie ID:</p>
+    <input type="number" name="ID" required /><br><br>
+
+    <p> Movie Title:</p>
+    <input type="text" name="MovieTitle" maxlength="50" required />
+    <br><br>
+
+    <label for="genre">Choose a genre:</label>
+    <select name="Genre">
+        <option value="comedy">Comedy</option>
+        <option value="drama">Drama</option>
+        <option value="romance">Romance</option>
+        <option value="adventure">Adventure</option>
+        <option value="horror">Horror</option>
+    </select>
+
+    <p>Movie Year:</p>
+    <input type="date" name="Year" min="1880-01-01" max="2020-12-31" required /><br><br>
+
+    <p>Movie Actors:</p>
+    <input type="text" name="Actors" required /><br><br>
+    <p>Movie Directors</p>
+    <input type="text" name="Directors" required /><br><br>
+
+    <p> Run Time</p>
+    <input type="number" name="RunTime" min="1" max="500" required /><br><br>
+    <p> Cost</p>
+    <input type="number" name="Cost" value="6.99" /><br><br>
+    <input type="submit" value="Submit" />
+
+</form>
+

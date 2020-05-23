@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Cart";
+}
+@model List<Movie>
+
+<h1>Cart</h1>
+<br>
+<br>
+
+<table style="width:100%">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Run Time
+        </th>
+        <th>
+            Cost
+        </th>
+
+    </tr>
+
+
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.MovieTitle</td>
+            <td>@movie.RunTime</td>
+            <td>@movie.Cost </td>
+
+
+        </tr>
+        
+    }
+</table>
+
+<br>
+<br>
+
+<form action="/Movie/GetReceipt" method="post">
+    <input type="submit" value="Check out" />
+    </form>
